@@ -92,27 +92,28 @@ void WHILE() {
 void DOWHILE(){
   int dowBegin = nextLabel();
   int dowEnd = nextLabel();
-  emit("(L%d)\n", dowBegin);
+  emit("(L%d)\n", dowBegin);  // 發出迴圈起始的標籤
   skip("do");
   STMT();
   skip("while");
   skip("(");
   int e = E();
+  emit("if T%d goto L%d\n", e, dowBegin);
   emit("if not T%d goto L%d\n", e, dowEnd);
-  //emit("goto L%d\n", dowBegin);
-  emit("(L%d)\n", dowEnd);
   skip(")");
   skip(";");
+  emit("(L%d)\n", dowEnd);
 }
 
 // STMT = WHILE | BLOCK | ASSIGN
-void STMT() {
-  if (isNext("while"))
+void STMT() 
+{
+  if (isNext("do"))
+    DOWHILE();
+  else if (isNext("while"))
     WHILE();
   // else if (isNext("if"))
   //   IF();
-  else if (isNext("do"))
-    DOWHILE();
   else if (isNext("{"))
     BLOCK();
   else
