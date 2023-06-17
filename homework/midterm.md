@@ -1,7 +1,7 @@
 > # 内容主要來源：
-> [**手把手教你构建 C 语言编译器0-4**](https://lotabout.me/2015/write-a-C-interpreter-1/)
-> [**Chatgpt**](https://chat.openai.com)
-> [**程式碼來源**](https://disq.us/url?url=https%3A%2F%2Fgithub.com%2Flotabout%2Fwrite-a-C-interpreter%3AZVUO1v-fpg4Id2pxKHnbjUN-7_I&cuid=2272845)
+> [**手把手教你构建 C 语言编译器0-4**](https://lotabout.me/2015/write-a-C-interpreter-1/)<br>
+> [**Chatgpt**](https://chat.openai.com)<br>
+> [**程式碼來源**](https://disq.us/url?url=https%3A%2F%2Fgithub.com%2Flotabout%2Fwrite-a-C-interpreter%3AZVUO1v-fpg4Id2pxKHnbjUN-7_I&cuid=2272845)<br>
 # **構建c語言編譯器**
 
 1. 解释器与编译器仅在代码生成阶段有区别，而其它方面如词法分析、语法分析是一样的。
